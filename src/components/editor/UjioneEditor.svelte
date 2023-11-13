@@ -15,8 +15,7 @@
 			</div>
 			<div>
 				<button on:click={BoldText} title="Bold" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200" >{@html icons.bold}</button>
-				<button on:click={ItalicText} title="Italic" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200 focus-visible:outline-none">{@html icons.italic}</button
-				>
+				<button on:click={ItalicText} title="Italic" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200 focus-visible:outline-none">{@html icons.italic}</button>
 				<button title="Underline" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200 focus-visible:outline-none" >{@html icons.underline}</button>
 			</div>
 		</div>
