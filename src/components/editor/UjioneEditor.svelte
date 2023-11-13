@@ -27,6 +27,6 @@
 		>
 			<p id="testing">asdkansd</p>
 		</div>
-		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">Total Kata : 0</div>
+		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
 	</section>
 </div>
