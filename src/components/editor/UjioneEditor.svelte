@@ -6,10 +6,7 @@
 
 <div class="mx-auto max-w-6xl mt-24">
 	<section id="ujione-editor" class="border-2 border-slate-200 rounded-md overflow-hidden">
-		<div
-			id="editor-tollbar"
-			class="h-24 border-b-2 border-slate-200 p-2 flex flex-col justify-between"
-		>
+		<div id="editor-tollbar" class="h-24 border-b-2 border-slate-200 p-2 flex flex-col justify-between">
 			<div>
 				<button>Insert</button>
 			</div>
@@ -27,11 +24,7 @@
 			</div>
 		</div>
 		</div>
-		<div
-			contenteditable="true"
-			id="editor-edit"
-			class="w-full p-2 focus:outline-none min-h-[240px]"
-		>
+		<div contenteditable="true" id="editor-edit" class="w-full p-2 focus:outline-none min-h-[240px]">
 			<p id="testing">asdkansd</p>
 		</div>
 		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
