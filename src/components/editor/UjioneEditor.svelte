@@ -20,10 +20,10 @@
 				<button title="Underline" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200 focus-visible:outline-none" >{@html icons.underline}</button>
 			</div>
 			<div>
-				<button title="align left" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_left}</button>
-				<button title="align center" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_center}</button>
-				<button title="align right" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_right}</button>
-				<button title="align justify" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_justify}</button>
+				<button title="text left" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_left}</button>
+				<button title="text center" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_center}</button>
+				<button title="text right" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_right}</button>
+				<button title="text justify" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_justify}</button>
 			</div>
 		</div>
 		</div>
