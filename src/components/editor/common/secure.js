@@ -1,6 +1,6 @@
 // @ts-nocheck
 export function SecurityEditor(doc) {
-  const editor_id = "editor-edit";
+  const editor_id = "editor-edit-ujione";
   let chance = 7;
   let trying = 0;
   let allowing = false;
