@@ -1,6 +1,7 @@
 <script>
 	import { BoldText } from './plugin/bold';
 	import RightText from './plugin/textRight';
+	import TextLeft from './plugin/textLeft';
 	import { ItalicText } from './plugin/italic';
 	import { icons } from './common/icons';
 </script>
@@ -18,7 +19,7 @@
 				<button title="Underline" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200 focus-visible:outline-none" >{@html icons.underline}</button>
 			</div>
 			<div>
-				<button title="Text Left" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_left}</button>
+				<button on:click={()=>{TextLeft()}} title="Text Left" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_left}</button>
 				<button title="Text Center" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_center}</button>
 				<button on:click={()=>{RightText()}} title="Text Right" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_right}</button>
 				<button title="Text Justify" class="h-6 w-6 p-1 cursor-pointer hover:bg-slate-200 rounded-md transition-colors duration-200">{@html icons.align_justify}</button>
