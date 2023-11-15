@@ -29,7 +29,8 @@
 		</div>
 		</div>
 		<div contenteditable="true" id="editor-edit-ujione" class="w-full p-2 focus:outline-none min-h-[240px]">
-			<p id="testing">asdkansd</p>
+			<p id="testing">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae, dicta tempora tenetur, esse perspiciatis accusamus natus modi, libero saepe dignissimos necessitatibus molestias numquam! Maiores facere temporibus fugit eaque placeat!
+			Ad beatae, facilis officiis dignissimos praesentium totam accusantium, sunt aspernatur architecto esse veritatis cupiditate vero ex quas veniam. Laborum id molestiae obcaecati ratione repellat dolore fuga fugit tempora optio eius!</p>
 		</div>
 		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
 	</section>
