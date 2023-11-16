@@ -12,12 +12,13 @@ export function BoldText() {
     id_editor.focus();
 
     if (selection.isCollapsed) {
-      /*
+      let tagTarget = searhParentTarget("b", selection.focusNode).current;
+
+      if (tagTarget.localName == "b") {
+        /*
       - handling when cursor not yet select any text or collapsed
       - remove when get the parent is node b
       */
-      let tagTarget = searhParentTarget("b", selection.focusNode).current;
-      if (tagTarget.localName == "b") {
         tagTarget.replaceWith(...tagTarget.childNodes);
       }
     }
