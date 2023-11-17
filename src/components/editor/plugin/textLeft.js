@@ -1,5 +1,4 @@
 // @ts-nocheck
-import searchTagP from "../common/searchTagP";
 import { SecurityEditor } from "../common/secure";
 
 export default function TextLeft() {
@@ -8,7 +7,7 @@ export default function TextLeft() {
 
   if (SecurityEditor(selection)) {
     id_editor.focus();
-    let isTagP = searchTagP(selection.focusNode.parentElement);
+    let isTagP = selection.focusNode.parentElement.closest("p");
     switch (isTagP.style.textAlign) {
       case "left":
         isTagP.style.textAlign = "";
