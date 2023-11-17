@@ -29,7 +29,7 @@
 		</div>
 		</div>
 		<div contenteditable="true" id="editor-edit-ujione" class="w-full p-2 focus:outline-none min-h-[240px]">
-			<p id="testing">Lorem, ipsum dolor sit <b><i>nkasdknaskd</i></b></p>
+			<p id="testing">Lorem, ipsum dolor sit <strong><i>nkasdknaskd</i></strong></p>
 		</div>
 		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
 	</section>
