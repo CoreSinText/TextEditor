@@ -24,6 +24,12 @@ export function BoldText() {
 				} else {
 				}
 				// Handle if cursor position last of node
+			} else if (current_node.length === undefined) {
+				node.innerHTML = '&#xFEFF';
+				selection.getRangeAt(0).insertNode(node);
+				range.setStart(selection.focusNode, 1);
+				selection.removeAllRanges();
+				selection.addRange(range);
 			} else {
 				if (selection.focusNode.parentElement.localName === 'strong') {
 					const parent = selection.focusNode.parentElement.parentElement;
