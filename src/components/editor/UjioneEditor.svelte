@@ -6,6 +6,11 @@
 	import TextJustify from './plugin/textJustify';
 	import { ItalicText } from './plugin/italic';
 	import { icons } from './common/icons';
+	import removeEmptySpan from './common/removeEmpetySpan';
+
+	function typingEvent() {
+		removeEmptySpan()
+	}
 </script>
 
 <div class="mx-auto max-w-6xl mt-24">
@@ -28,8 +33,8 @@
 			</div>
 		</div>
 		</div>
-		<div contenteditable="true" id="editor-edit-ujione" class="w-full p-2 focus:outline-none min-h-[240px]">
-			<p id="testing">asdasdnasdn<b id="j">asdlasdasdamsdlasdmasmmdmaslmdl</b><em>anskdkanskndknkasnd</em></p>
+		<div contenteditable="true" id="editor-edit-ujione" on:keypress={typingEvent}  class="w-full p-2 focus:outline-none min-h-[240px]">
+			<p id="testing">as<b id="j">mdl</b><em>nd</em></p>
 		</div>
 		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
 	</section>

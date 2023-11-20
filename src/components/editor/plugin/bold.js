@@ -28,6 +28,7 @@ export function BoldText() {
 				if (selection.focusNode.parentElement.localName === 'strong') {
 					const parent = selection.focusNode.parentElement.parentElement;
 					let newNode = document.createElement('span');
+					newNode.setAttribute('careteditor', 'true');
 					newNode.innerHTML = '&#xFEFF';
 					parent.appendChild(newNode);
 					range.setStart(parent, parent.childNodes.length);
@@ -41,18 +42,13 @@ export function BoldText() {
 					selection.addRange(range);
 				}
 			}
-			// selection.getRangeAt(0).insertNode(node)
-
-			// range.setStart(document.querySelector("#j"), 1)
-			// selection.removeAllRanges()
-			// selection.addRange(range)
-			id_editor.focus();
 		} else {
-			const anchestor = selection.getRangeAt(0);
-			const select_text = document.createTextNode(anchestor.toString());
+			console.log(selection);
+			// const anchestor = selection.getRangeAt(0);
+			// const select_text = document.createTextNode(anchestor.toString());
 
-			anchestor.deleteContents();
-			anchestor.insertNode(select_text);
+			// anchestor.deleteContents();
+			// anchestor.insertNode(select_text);
 
 			// const range = selection.getRangeAt(0);
 			// let selectTextNode = document.createTextNode(range.toString());
