@@ -32,12 +32,13 @@ export function BoldText() {
 				selection.addRange(range);
 			} else {
 				if (selection.focusNode.parentElement.localName === 'strong') {
-					const parent = selection.focusNode.parentElement.parentElement;
+					const super_parent = selection.focusNode.parentElement.parentElement;
+					const parent = selection.focusNode.parentElement;
 					let newNode = document.createElement('span');
 					newNode.setAttribute('careteditor', 'true');
 					newNode.innerHTML = '&#xFEFF';
-					parent.appendChild(newNode);
-					range.setStart(parent, parent.childNodes.length);
+					super_parent.insertBefore(newNode, parent);
+					range.setStart(super_parent, super_parent.childNodes.length);
 					selection.removeAllRanges();
 					selection.addRange(range);
 				} else {
