@@ -25,7 +25,6 @@ export function BoldText() {
 					const previous_focus = selection.anchorNode;
 					const previous_foffset = selection.anchorNode;
 					const new_range = document.createRange();
-					selection.getRangeAt(0).surroundContents(node);
 					range.selectNode(selection.focusNode);
 					selection.removeAllRanges();
 					selection.addRange(range);
