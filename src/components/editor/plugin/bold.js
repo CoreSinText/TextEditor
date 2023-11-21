@@ -12,16 +12,27 @@ export function BoldText() {
 			const range = document.createRange();
 
 			if (current_node.length > selection.anchorOffset) {
-				const parent = selection.focusNode.parentElement.closest('b');
+				const parent = selection.focusNode.parentElement.closest('strong');
 				if (parent) {
-					const previous_range = selection.getRangeAt(0).cloneRange();
-					// const c = parent.childNodes
-					// parent.replaceWith(...c)
-					// range.setStart(selection.focusNode, 0)
-					// selection.removeAllRanges()
-					// selection.addRange(range)
-					// console.log(previous_range);
+					const previous_focus = selection.focusNode;
+					const previous_foffset = selection.anchorOffset;
+					const c = parent.childNodes;
+					parent.replaceWith(...c);
+					range.setStart(previous_focus, previous_foffset);
+					selection.removeAllRanges();
+					selection.addRange(range);
 				} else {
+					const previous_focus = selection.anchorNode;
+					const previous_foffset = selection.anchorNode;
+					const new_range = document.createRange();
+					selection.getRangeAt(0).surroundContents(node);
+					range.selectNode(selection.focusNode);
+					selection.removeAllRanges();
+					selection.addRange(range);
+					range.surroundContents(node);
+					new_range.setStart(previous_focus, previous_foffset);
+					selection.removeAllRanges();
+					selection.addRange(new_range);
 				}
 				// Handle if cursor position last of node
 			} else if (current_node.length === undefined) {
