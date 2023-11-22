@@ -34,7 +34,7 @@
 		</div>
 		</div>
 		<div contenteditable="true" id="editor-edit-ujione" on:keypress={typingEvent}  class="w-full p-2 focus:outline-none min-h-[240px]">
-			<p id="testing">as<strong id="j">mdl<em>asndasd</em></strong><em>ndasdas</em></p>
+			<p id="testing">as<strong>mdl<em>asndasd</em></strong><em>ndasdas</em></p>
 		</div>
 		<div id="editor-info" class="border-t-2 border-slate-200 px-2 py-1 text-xs">0 : Kata</div>
 	</section>
