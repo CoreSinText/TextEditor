@@ -7,7 +7,6 @@ export function BoldText() {
 	const id_editor = document.querySelector('#editor-edit-ujione');
 	const node = document.createElement('strong');
 	const root_node = ('p', 'h1', 'h2', 'h3', 'h4');
-
 	if (SecurityEditor(selection)) {
 		if (selection.isCollapsed) {
 			const current_node = selection.focusNode;
@@ -62,30 +61,59 @@ export function BoldText() {
 				}
 			}
 		} else {
-			const cloning_node = selection.getRangeAt(0).cloneContents();
-			if (
-				selection.anchorNode.parentElement.localName === 'strong' ||
-				selection.anchorNode.parentElement.closest('strong')
-			) {
-				const each_node = cloning_node.childNodes;
-				for (let i = 0; i < each_node.length; i++) {
-					if (each_node[i].localName != 'strong') {
-						node.appendChild(each_node[i]);
-						cloning_node.insertBefore(node, each_node[i]);
-					}
+			let v1 = selection.getRangeAt(0).cloneContents().querySelectorAll('strong');
+			const v2 = selection.anchorNode.parentElement.localName === 'strong';
+			const v3 = selection.anchorNode.parentElement.closest('strong');
+			if (v1.length > 0) {
+				if (v2 || v3) {
+					rangeBold('remove-bold');
+				} else {
+					rangeBold('add-bold');
 				}
-
-				selection.getRangeAt(0).deleteContents();
-				selection.getRangeAt(0).insertNode(cloning_node);
 			} else {
-				const strong_node = cloning_node.querySelectorAll('strong');
-				for (let i = 0; i < strong_node.length; i++) {
-					strong_node[i].replaceWith(...strong_node[i].childNodes);
+				if (v2 || v3) {
+					rangeBold('add-bold');
+				} else {
+					rangeBold('remove-bold');
 				}
-				selection.getRangeAt(0).deleteContents();
-				selection.getRangeAt(0).insertNode(cloning_node);
 			}
 		}
 	}
 	id_editor.focus();
 }
+
+// Controller Bold Text
+function rangeBold(type) {
+	const selection = document.getSelection();
+	const cloning_node = selection.getRangeAt(0).cloneContents();
+	const node = document.createElement('strong');
+	switch (type) {
+		case 'remove-bold':
+			// eslint-disable-next-line no-case-declarations
+			const each_node = cloning_node.childNodes;
+			for (let i = 0; i < each_node.length; i++) {
+				if (each_node[i].localName != 'strong') {
+					node.appendChild(each_node[i]);
+					cloning_node.insertBefore(node, each_node[i]);
+				}
+			}
+			selection.getRangeAt(0).deleteContents();
+			selection.getRangeAt(0).insertNode(cloning_node);
+			break;
+
+		case 'add-bold':
+			// eslint-disable-next-line no-case-declarations
+			const strong_node = cloning_node.querySelectorAll('strong');
+			for (let i = 0; i < strong_node.length; i++) {
+				strong_node[i].replaceWith(...strong_node[i].childNodes);
+			}
+			selection.getRangeAt(0).deleteContents();
+			selection.getRangeAt(0).insertNode(cloning_node);
+			break;
+		default:
+			break;
+	}
+}
+
+function cursorBold(type) {}
+// Controller Bold Text
