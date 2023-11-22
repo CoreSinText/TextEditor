@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // @ts-nocheck
 import { SecurityEditor } from '../common/secure';
 
@@ -5,6 +6,7 @@ export function BoldText() {
 	const selection = document.getSelection();
 	const id_editor = document.querySelector('#editor-edit-ujione');
 	const node = document.createElement('strong');
+	const root_node = ('p', 'h1', 'h2', 'h3', 'h4');
 
 	if (SecurityEditor(selection)) {
 		if (selection.isCollapsed) {
@@ -60,20 +62,29 @@ export function BoldText() {
 				}
 			}
 		} else {
-			console.log(selection);
-			// const anchestor = selection.getRangeAt(0);
-			// const select_text = document.createTextNode(anchestor.toString());
+			const cloning_node = selection.getRangeAt(0).cloneContents();
+			if (
+				selection.anchorNode.parentElement.localName === 'strong' ||
+				selection.anchorNode.parentElement.closest('strong')
+			) {
+				const each_node = cloning_node.childNodes;
+				for (let i = 0; i < each_node.length; i++) {
+					if (each_node[i].localName != 'strong') {
+						node.appendChild(each_node[i]);
+						cloning_node.insertBefore(node, each_node[i]);
+					}
+				}
 
-			// anchestor.deleteContents();
-			// anchestor.insertNode(select_text);
-
-			// const range = selection.getRangeAt(0);
-			// let selectTextNode = document.createTextNode(range.toString());
-			// node.appendChild(selectTextNode);
-			// range.deleteContents();
-			// range.insertNode(node);
-			// selection.removeAllRanges();
-			// selection.addRange(range);
+				selection.getRangeAt(0).deleteContents();
+				selection.getRangeAt(0).insertNode(cloning_node);
+			} else {
+				const strong_node = cloning_node.querySelectorAll('strong');
+				for (let i = 0; i < strong_node.length; i++) {
+					strong_node[i].replaceWith(...strong_node[i].childNodes);
+				}
+				selection.getRangeAt(0).deleteContents();
+				selection.getRangeAt(0).insertNode(cloning_node);
+			}
 		}
 	}
 	id_editor.focus();
